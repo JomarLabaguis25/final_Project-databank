@@ -1,0 +1,50 @@
+CRITICAL - 2023-11-13 05:18:31 --> Invalid file: "index1.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('index1.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('index1', [], true)
+ 3 APPPATH\Controllers\MainController.php(18): view('index1')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->index1()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\backend\\public\\index.php')
+CRITICAL - 2023-11-13 10:04:03 --> Invalid file: "index1.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('index1.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('index1', [], true)
+ 3 APPPATH\Controllers\MainController.php(18): view('index1')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->index1()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\backend\\public\\index.php')
+CRITICAL - 2023-11-13 10:04:07 --> Invalid file: "login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Home.php(13): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->login()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\backend\\public\\index.php')
+CRITICAL - 2023-11-13 10:36:51 --> Invalid file: "login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Home.php(13): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->login()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\backend\\public\\index.php')
+CRITICAL - 2023-11-13 10:37:22 --> Invalid file: "login.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Home.php(13): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->login()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\backend\\public\\index.php')

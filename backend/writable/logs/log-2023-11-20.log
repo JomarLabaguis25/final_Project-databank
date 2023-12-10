@@ -1,0 +1,78 @@
+CRITICAL - 2023-11-20 10:17:52 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 10:17:55 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 10:22:40 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 33.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 10:57:15 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 10:57:18 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 10:57:19 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 10:57:19 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 10:57:24 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 11:00:01 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 11:03:04 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 11:03:07 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 11:05:03 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-20 11:05:08 --> Call to a member function where() on null
+in APPPATH\Controllers\MainController.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\MainController->register()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MainController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(86): CodeIgniter\CodeIgniter->run()
