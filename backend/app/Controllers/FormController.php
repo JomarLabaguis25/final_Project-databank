@@ -54,19 +54,13 @@ class FormController extends ResourceController
         }
     }
 }
-
 // Your verification method
 public function verification($length)
-{
-    
+
     return bin2hex(random_bytes($length));
 }
-
-   
 public function login()
     {
-        
-    
         $json = $this->request->getJSON();
 
         if (isset($json->IDNum) && isset($json->password)) {
@@ -91,7 +85,6 @@ public function login()
         }
     }
 }
-
 ?>
 
 
