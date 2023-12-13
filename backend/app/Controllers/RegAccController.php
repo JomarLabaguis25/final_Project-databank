@@ -26,14 +26,11 @@ class RegAccController extends ResourceController
         return $this->respond($r, 200);
 
     }
-
-
     use ResponseTrait;
 
     public function updateProfile($id)
     {
         $requestData = $this->request->getJson();
-
 
         // Update the profile in the database
         $regaccModel = new RegAccModel();
