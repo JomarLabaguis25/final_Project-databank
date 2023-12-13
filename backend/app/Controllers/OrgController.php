@@ -68,7 +68,6 @@ class OrgController extends ResourceController
             'eventDate' => $json->getVar('eventDate'),
             'OrgName' => $json->getVar('OrgName'),
         ];
-
         $u = $this->orgModel->save($data);
 
         if ($u) {
