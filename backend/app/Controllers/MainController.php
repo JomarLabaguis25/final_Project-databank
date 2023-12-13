@@ -60,7 +60,8 @@ class MainController extends ResourceController
         $id = $json->id;
         $regaccModel = new ScholarModel();
         $r = $regaccModel->delete($id);
-        return $this->respond($r, 200
+        return $this->respond($r, 200);
+
     }
     use ResponseTrait;
 
@@ -101,6 +102,7 @@ class MainController extends ResourceController
             echo "No records found for the provided ID number.";
         }
     }
+
     public function getPay(){
         $pay = new PayrollModel();
         $data = $pay->findAll();
