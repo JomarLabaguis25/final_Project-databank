@@ -66,10 +66,8 @@ class InquireController extends ResourceController
 
         $inquireModel = new IquireModel();
         $inquireModel->update($id, $updatedData);
-
         return $this->respond(['message' => 'Info updated successfully'], Response::HTTP_OK);
     }
-
     // Function to delete info data
     public function deleteInfo($id)
     {
@@ -88,8 +86,7 @@ class InquireController extends ResourceController
 
         // Insert data into the database
         $formInquireModel->insert($formData);
-
-        // Optionally, you can redirect to another page after successful insertion
+        
         return redirect()->to('job_Details');
     }
 }
