@@ -9,7 +9,7 @@ use CodeIgniter\API\ResponseTrait;
 
 
 
-class FormController extends ResourceController
+class OrgFormController extends ResourceController
 {
     public function index()
 {
@@ -28,7 +28,7 @@ public function Orgregister()
     }
 
     $orgformModel = new OrgFormModel();
-    $token = $this->verification(50);
+    $token = $this->Orgverification(50);
     $exUser = $orgformModel->where('IDNum', $IDNum)->first();
 
     if ($exUser) {
@@ -94,5 +94,6 @@ public function Orglogin()
 }
 
 ?>
+
 
 
