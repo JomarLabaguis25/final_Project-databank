@@ -2,28 +2,43 @@
 <body>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5" href="/" style="text-decoration: none; color: #333; display: flex; align-items: center;">
-    <img src="../../../public/img/icons/minsu.jpg" alt="MinSU's Job Section Logo" class="logo-img" style="max-height: 40px; max-width: 100%; margin-right: 10px;">
-    <h1 class="m-0 text-primary" style="font-size: 1.5rem; font-weight: bold;">MinSU's Job Section</h1>
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5" href="/" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+            <img src="../../../public/img/icons/minsu.jpg" alt="MinSU's Job Section Logo" class="logo-img" style="max-height: 40px; max-width: 100%; margin-right: 10px;">
+            <h1 class="m-0 text-primary" style="font-size: 1.5rem; font-weight: bold;">MinSU's Job Section</h1>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto p-4 p-lg-0">
+                <li class="nav-item"><a href="/" class="nav-link ">Home</a></li>
+                <li class="nav-item"><a href="jobDetails" class="nav-link">Job Detail</a></li>
+                <li class="nav-item"><a href="category" class="nav-link active">Job Category</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="about" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="menuDropdown">
+                        <li><a class="dropdown-item" href="testimonial">Testimonial</a></li>
+                        <li><a class="dropdown-item" href="contact">Contact</a></li>
+                       
+                    </ul>
+                </li>
+                <a href="/personal" style="background-color: lightgreen; border: none; color: white; padding: 10px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">
+  Profile
 </a>
 
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link ">Home</a>
-                    <a href="about" class="nav-item nav-link">About</a>
-                    <a href="jobDetails" class="nav-item nav-link">Job Detail</a>
-                    <a href="category" class="nav-item nav-link active">Job Category</a>
-                    <a href="contact" class="nav-item nav-link">Contact</a>
-                    <a href="testimonial" class="nav-item nav-link">Testimonial</a>
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar End -->
-    
+            </ul>
+        </div>
+    </div>
+</nav>
 
+
+        <!-- Navbar End -->
+ 
 
         <!-- Header End -->
         <div class="container-xxl py-5 bg-dark page-header mb-5">
@@ -39,25 +54,130 @@
             </div>
         </div>
         <!-- Header End -->
-
-
         <!-- Category Start -->
-        <div class="container-xxl py-5">
+                       <!-- Category Start -->
+                       <div class="container-xxl py-5">
             <div class="container">
                 <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Explore By Category</h1>
-                <!-- <select v-model="selectedCategory"> -->
-                <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s" :key="categ.id" v-for="categ in catego">
+                <div class="row g-4" >
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
     <a class="cat-item rounded p-4" href="/information/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
         <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
             <img src="../../../public/img/college logo/ccs.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
         </div>
-        <h6 class="mb-3">{{categ.CategoryName}}</h6>
+        <h6 class="mb-3">Information & Technology</h6>
         <p class="mb-0"></p>
     </a>
 </div>
+
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" href="/business/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/cbm.png" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Business and Management</h6>
+        <p class="mb-0"></p>
+    </a>
 </div>
 
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" 
+    style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/cte.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Teaching & Education</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+                 
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4"  style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/crim.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Criminology & Justice</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+                  
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" href="/psychology/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/cas.png" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">English & Psychology</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" href="/fashion/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/BTVTED.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Fashion & Garments</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" href="/drafting/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/BTVTED.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Drafting</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" href="/food/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/BTVTED.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Foode & Services</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" href="/automotive/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/BTVTED.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Automotive</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" href="/tech/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/BTVTED.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Electronics & Electrical Tech</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" href="/home/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/BTVTED.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Home Economics</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+
+<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+    <a class="cat-item rounded p-4" href="/industrial/id" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
+        <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../../public/img/college logo/BTVTED.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+        <h6 class="mb-3">Industrial Arts</h6>
+        <p class="mb-0"></p>
+    </a>
+</div>
+                </div>
             </div>
         </div>
 
@@ -114,7 +234,23 @@
 <script>
 import axios from 'axios';
 export default {
-  data() {
+    data(){
+        return{
+            catego: [],
+        }
+    },
+    mounted(){
+        this.getCate();
+    },
+    methods: {
+        async getCate(){
+            const categ = await axios.get("getCate");
+            this.catego = categ.data;
+        }
+    },
+};
+</script>
+   <!-- data() {
          return {
            info: "",
            data: "",
@@ -157,19 +293,4 @@ export default {
        mounted() {
          this.fetchDataOnMounted();
        },
-};
-</script>
-<!-- data(){
-  return{
-      catego: [],
-  }
-},
-mounted(){
-  this.getCate();
-},
-methods: {
-  async getCate(){
-      const categ = await axios.get("getCate");
-      this.catego = categ.data;
-  }
-}, -->
+     }; -->

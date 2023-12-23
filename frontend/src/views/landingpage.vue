@@ -13,140 +13,134 @@
           <!-- Adjusted the margin for the paragraph -->
           <p class="section-title" style="margin-top: 15px;">Chairperson of an organization?</p>
           <a href="/orgReg" class="button btn-light-green">Register Your Organization</a>
+        </div>
+      </div>
 
-        </div>
-      </div>
       <!-- Move the admin icon to the top right -->
-      <div style="position: fixed; top: 20px; right: 20px;">
-        <a href="/admin-login" @mouseover="showModal" @mouseout="hideModal">
-          <img src="../assets/img/admin.png" alt="Admin Icon" width="50" height="50">
-        </a>
-        <!-- Modal -->
-        <div v-if="isModalVisible" class="modal" @mouseover="keepModal" @mouseout="hideModal">
-          <div class="modal-content">
-            <!-- Add your modal content here -->
-            <p>This is the admin modal content.</p>
-          </div>
-        </div>
-      </div>
+      <div>
+        <div>
+          <div style="display: flex; align-items: center; position: fixed; top: 20px; right: 20px;">
+    <a href="#" @click="toggleForm">
+      <img src="../assets/img/admin.png" alt="Admin Icon" width="50" height="50">
+    </a>
+
+    <div v-if="showForm" style="background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+      <!-- Form content -->
+      <p>Are you really the admin?</p>
+
+      <!-- Yes and No buttons -->
+      <div>
+  <button style="background-color: green; color: white; margin-right: 10px;" type="button" @click="handleYes">Yes</button>
+  <button style="background-color: red; color: white;" type="button" @click="handleNo">No</button>
+</div>
+
+
+
+
+      <!-- Close button for the modal -->
+      <span style="position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 20px;" @click="toggleForm">&times;</span>
+    </div>
+  </div>
+  </div>
+  </div>
     </section>
   </div>
 </template>
+
+<!-- Add or adjust styles as needed -->
 <script>
 export default {
   data() {
     return {
-      isModalVisible: false
+      showForm: false,
     };
   },
   methods: {
-    showModal() {
-      this.isModalVisible = true;
+    toggleForm() {
+      this.showForm = !this.showForm;
     },
-    hideModal() {
-      this.isModalVisible = false;
+    handleYes() {
+      this.$router.push('/page');
     },
-    keepModal() {
-      // Add any logic here if you want to keep the modal open under certain conditions
-      // For example, if you want the modal to stay open even when the cursor leaves the admin icon but is inside the modal area
-      this.isModalVisible = true;
-    }
-  }
+    handleNo() {
+      console.log('No clicked');
+      this.showForm = false;
+    },
+  },
 };
 </script>
-  <style>
-    /* Remove the background image from the body */
-    .body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            text-align: center;
-            color: #333;
-            height: 100vh; /* Set body height to viewport height */
-        }
-
-        .header {
-            margin-bottom: 10px;
-        }
-
-        .main-heading {
-            color: white;
-            margin-bottom: 5px;
-        }
-
-        .main-section {
-            margin: 0;
-            padding: 0;
-            height: 100vh; /* Set height to viewport height */
-            background-image: url('../../public/img/icons/minsu-bg2.jpg');
-            background-size: cover; /* Cover the entire element */
-            background-repeat: no-repeat;
-        }
-  
-    .content-box {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #006400;
-    border-radius: 10px;
-    background-color: rgba(240, 248, 255, 0.8); /* Adjust the alpha channel for transparency */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-    .combined-section {
-      margin-bottom: 20px;
-    }
-  
-    .section-title {
-      color: #006400;
-      margin: 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
-  
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 5px;
-      margin: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-  
-    .button:hover {
-      background-color: #003300;
-    }
-  
-    .btn-dark-green {
-      background-color: #006400;
-      color: #fff;
-    }
-  
-    .btn-light-green {
-      background-color: #4CAF50;
-      color: #fff;
-    }
-    .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+<style scoped>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  text-align: center;
+  color: #333;
+  background-color: #f0f8ff; /* Set a light blue background color */
 }
 
-.modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
+header {
+  margin-bottom: 10px;
+}
+
+.main-heading {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.main-section {
+  margin: 20px 0;
+  background-image: url('../../public/img/icons/minsu-bg2.jpg');
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+  position: relative; /* Add position relative to create a stacking context */
+}
+
+.content-box {
+  max-width: 400px;
+  margin: 0 auto;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #006400;
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-  </style>
+.combined-section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  color: #006400;
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #003300;
+}
+
+.btn-dark-green {
+  background-color: #006400;
+  color: #fff;
+}
+
+.btn-light-green {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+/* Modal styles */
+</style>

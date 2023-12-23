@@ -15,9 +15,27 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
+
+      <button class="btn btn-danger" @click="openModal()">Logout</button>
+
     </div>
   </header>
-
+<!-- Logout Confirmation Modal -->
+<div class="modal" id="logoutModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7);">
+    <div class="modal-content" style="width: 50%; margin: 15% auto; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <div class="modal-header" style="overflow: hidden; border-bottom: 1px solid #ddd;">
+            <span class="close" onclick="closeModal()" style="float: right; font-size: 20px; font-weight: bold; cursor: pointer;">&times;</span>
+            <h2 style="margin: 0;">Logout Confirmation</h2>
+        </div>
+        <div class="modal-body">
+            <p id="confirmationMessage">Are you sure you want to logout?</p>
+        </div>
+        <div class="modal-footer" style="text-align: right; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 10px;">
+            <button type="button" @click="closeModal()" style="background-color: #ddd; padding: 5px 10px; border: none; border-radius: 3px; cursor: pointer;">Cancel</button>
+            <button type="button" @click="confirmLogout()" style="background-color: #4CAF50; color: #fff; padding: 5px 10px; border: none; border-radius: 3px; cursor: pointer;">Logout</button>
+        </div>
+    </div>
+</div>
   <!-- End Header -->
      <!-- ======= Hero Section ======= -->
      <section id="hero" class="d-flex align-items-center justify-content-center">
@@ -31,12 +49,100 @@
       </div>
 
       <div class="row gy-4 mt-5 justify-content-center">
-        <div class="col-xl-2 col-md-4"  v-for="(category, index) in categories" :key="index"  >
+        <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
-            <img :src="`../../assets/img/${category.image}`" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+            <img src="../../assets/img/lead.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
         </div>
-        <h3><a :href="`/lead/${category.OrgId}`">{{ category.OrgCategory }}</a></h3>
+        <h3><a href="/lead">LEAD</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/teatro.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+                    <h3><a href="/teatro">Teatro MinSU</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/turista.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+                    <h3><a href="/turista">Turista</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/veritas.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+                    <h3><a href="/veritas">The Veritas</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/legits.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>            
+        <h3><a href="/legits">LEGITS</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/samfil.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+                    <h3><a href="/samfil">Samahang Filipino</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/buklod.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+                    <h3><a href="/buklod">Buklod</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/sikada.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+                    <h3><a href="/sikada">Sikada Chorale</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/baanaw.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+                    <h3><a href="/baanaw">BAANAW</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/gad.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>            
+        <h3><a href="/gad">Ala-GAD Advocates</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/linguistic.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+                    <h3><a href="/linguistic">Linguistic Circle</a></h3>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <img src="../../assets/img/eng-thusiast.jpg" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+        </div>
+                    <h3><a href="/eng">Eng-Thusiast</a></h3>
           </div>
         </div>
       </div>
@@ -58,81 +164,46 @@
 @import'../../assets/orgwebsite/css/style.css';
 </style>
 <script>
-import axios from 'axios';
-export default{
-       data(){
-           return{
-               info:"",
-               categories:[],
-           }
-       },
-       mounted(){
-           this.getWebInfo();
-           this.getorgcategories();
-       },
-       methods:{
-        async getorgcategories(){
-            try{
-                const c = await axios.get('getorgcategories');
-                this.categories = c.data;
-            }catch(error){
-               console.log(error);
-            }
-        },
-           async getWebInfo(){
-               try{
-                   const a = await axios.get("getWebInfo");
-                   this.info = a.data;
-                   console.log(a);
-               }catch(error){
-               console.log(error);
-               }
-           }
-       }
-   }
-</script>
+  import axios from 'axios';
 
-
-<!-- <script>
-export default {
-
-name: "StudentOrgWebsite",
-
-components: {
-  orgIndex,orgAbout,  orgContact,
-},
-
-mounted() {
-
-    this.loadScripts();
-
-},
-
-methods: {
-    loadScripts() {
-        const scriptUrls = [
-            '/assets/demo/chart-area-demo.js',
-,
-        ];
-
-        const head = document.getElementsByTagName('head')[0];
-
-        function loadScript(index) {
-            if (index < scriptUrls.length) {
-                const script = document.createElement('script');
-                script.src = scriptUrls[index];
-                script.async = true;
-
-                script.onload = function () {
-                    loadScript(index + 1);
-                };
-
-                head.appendChild(script);
-            }
-        }
-
-        loadScript(0);
+  export default {
+    data() {
+      return {
+        news: "",
+      };
     },
-},
-};
-</script> -->
+    mounted() {
+      // Close the modal if the user clicks outside of it
+      window.onclick = (event) => {
+        var modal = document.getElementById('logoutModal');
+        if (event.target == modal) {
+          this.closeModal();
+        }
+      };
+    },
+    methods: {
+      openModal() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'block';
+      },
+      closeModal() {
+        var modal = document.getElementById('logoutModal');
+        modal.style.display = 'none';
+      },
+      confirmLogout() {
+        console.log('confirmLogout() called'); // Add this line
+
+        // Add your logout logic here (if any)
+
+        // Display a confirmation alert
+        alert('Logout confirmed!');
+
+        // Redirect to the login form using Vue Router
+        this.$router.push({ path: '/orgLogin' });
+
+        // Close the modal or perform other actions (optional, depending on your needs)
+        // this.closeModal();
+      },
+    }
+  }
+</script>

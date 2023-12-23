@@ -6,7 +6,7 @@
           <img src="../../../public/img/icons/minsu.jpg" alt="Logo" class="logo-img">
         </div>
       <div class="formbold-form-title">
-        <h2 class="form-title">Login</h2>
+        <h2 class="form-title">Alumni Login</h2>
       </div>
       <form class="user" @submit.prevent="validateAndLogin">
         <div class="form-group">
@@ -156,6 +156,8 @@
         })
         .then((response) => {
           if (response.data.message === 'Login successful') {
+            //id
+            localStorage.setItem('userId', response.data.id);
             // console.log(response.data.message)
             this.$router.push('/');
          

@@ -7,3 +7,4 @@ import axios from 'axios'
 axios.defaults.baseURL="http://backend.test/"
 
 createApp(App).use(router).mount('#app')
+

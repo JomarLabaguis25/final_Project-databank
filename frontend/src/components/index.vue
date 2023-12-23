@@ -1,25 +1,42 @@
 <template>
     <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5" href="/" style="text-decoration: none; color: #333; display: flex; align-items: center;">
-    <img src="../../public/img/icons/minsu.jpg" alt="MinSU's Job Section Logo" class="logo-img" style="max-height: 40px; max-width: 100%; margin-right: 10px;">
-    <h1 class="m-0 text-primary" style="font-size: 1.5rem; font-weight: bold;">MinSU's Job Section</h1>
-</a>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5" href="/" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+            <img src="../../public/img/icons/minsu.jpg" alt="MinSU's Job Section Logo" class="logo-img" style="max-height: 40px; max-width: 100%; margin-right: 10px;">
+            <h1 class="m-0 text-primary" style="font-size: 1.5rem; font-weight: bold;">MinSU's Job Section</h1>
+        </a>
 
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="about" class="nav-item nav-link">About</a>
-                    <a href="jobDetails" class="nav-item nav-link">Job Detail</a>
-                    <a href="category" class="nav-item nav-link">Job Category</a>
-                    <a href="contact" class="nav-item nav-link">Contact</a>
-                    <a href="testimonial" class="nav-item nav-link">Testimonial</a>
-                </div>
-            </div>
-        </nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto p-4 p-lg-0">
+                <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="jobDetails" class="nav-link">Job Detail</a></li>
+                <li class="nav-item"><a href="category" class="nav-link">Job Category</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="about" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="menuDropdown">
+                        <li><a class="dropdown-item" href="testimonial">Testimonial</a></li>
+                        <li><a class="dropdown-item" href="contact">Contact</a></li>
+                       
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="category" class="nav-link">Job Category</a></li>
+                <a v-if="user" href="/personal" style="background-color: lightgreen; border: none; color: white; padding: 10px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">
+            {{user.Fullname}}
+            </a>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
         <!-- Navbar End -->
 
         <!-- Search Start -->
@@ -66,7 +83,7 @@
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" v-for="(category, index) in categories" :key="index" :data-wow-delay="`${index * 0.7}s`">
       <a :href="`/information/${category.categoryId}`" class="cat-item rounded p-4" style="position: relative; text-align: center; text-decoration: none; color: inherit; display: block;">
         <div style="width: 70px; height: 70px; background-color: #3498db; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
-          <img :src="`../../public/img/college logo/${category.image}`" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
+            <img :src="require('@/assets/img/' + category.image)" alt="Image" style="border-radius: 50%; max-width: 100%; height: auto;">
         </div>
         <h6 class="mb-3">{{ category.CategoryName }}</h6>   
         <p class="mb-0">{{ category.description }}</p>
@@ -154,37 +171,74 @@
 @import'../../assets/css/style.css';
 </style> -->
 <script>
-import axios from 'axios';
-export default{
-       data(){
-           return{
-               info:"",
-               categories:[],
-           }
-       },
-       mounted(){
-           this.getWebInfo();
-           this.getCategories();
-       },
-       methods:{
-        async getCategories(){
-            try{
-                const c = await axios.get('getcategories');
-                this.categories = c.data;
-            }catch(error){
-               console.log(error);
-            }
-        },
-           async getWebInfo(){
-               try{
-                   const a = await axios.get("getWebInfo");
-                   this.info = a.data;
-                   console.log(a);
-               }catch(error){
-               console.log(error);
-               }
-           }
-       }
-   }
-</script>
+    import axios from 'axios';
 
+    export default {
+        data() {
+            return {
+                info: "",
+                categories: [],
+                user: [],
+                userId: null,
+                
+            };
+        },
+        mounted() {
+            this.getWebInfo();
+            this.getCategories();
+           
+
+            // Close the modal if the user clicks outside of it
+            window.onclick = (event) => {
+                var modal = document.getElementById('logoutModal');
+                if (event.target == modal) {
+                    this.closeModal();
+                }
+            };
+            
+            //
+
+            //
+        },
+
+        //
+        created(){
+            const storeduserId = localStorage.getItem('userId');
+            if (storeduserId) {
+            // Make an API call to your CI4 backend
+            axios.get(`/getUserID/${storeduserId}`)
+                .then(response => {
+                this.user = response.data;
+                })
+                .catch(error => {
+                console.error(error);
+                });
+            }
+
+        },
+        //
+        methods: {
+            
+           
+            //
+            async getCategories() {
+                try {
+                    const c = await axios.get('getcategories');
+                    this.categories = c.data;
+                    console.log(this.categories);
+                } catch (error) {
+                    console.error(error);
+                }
+            },
+            async getWebInfo() {
+                try {
+                    const a = await axios.get("getWebInfo");
+                    this.info = a.data;
+                    console.log(a);
+                } catch (error) {
+                    console.error(error);
+                }
+            },
+        }
+    };
+</script>

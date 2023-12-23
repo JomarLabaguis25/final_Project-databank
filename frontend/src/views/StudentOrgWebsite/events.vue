@@ -23,20 +23,7 @@
             <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Action</th>
         </tr>
     </thead>
-    <tbody v-for="info in info" :key="info.id">
-        <tr>
-            <td style="padding: 12px; border: 1px solid #ddd;">{{ info.eventDate }}</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">{{ info.eventName }}</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">{{ info.eventLoc }}</td>
-            <td style="padding: 12px; border: 1px solid #ddd;">{{ info.eventDesc }}</td>
-            <td style="padding: 12px; border: 1px solid #ddd;"><span class="status--process">{{ info.Status }}</span></td>
-            <td style="padding: 12px; border: 1px solid #ddd;">
-                <button class="btn btn-primary" @click="updateTask(info)">Update</button>
-                <span style="margin-left: 5px; margin-right: 5px;"></span> <!-- Adjust the spacing here -->
-                <button class="btn btn-danger" @click="deleteTask(info.id)">Delete</button>
-            </td>
-        </tr>
-    </tbody>
+   
 </table>
 <div style="text-align: right;">
     <a href="/insertEvent" class="btn btn-secondary">

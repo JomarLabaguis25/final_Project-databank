@@ -2,28 +2,42 @@
     <body>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5" href="/" style="text-decoration: none; color: #333; display: flex; align-items: center;">
-    <img src="../../../public/img/icons/minsu.jpg" alt="MinSU's Job Section Logo" class="logo-img" style="max-height: 40px; max-width: 100%; margin-right: 10px;">
-    <h1 class="m-0 text-primary" style="font-size: 1.5rem; font-weight: bold;">MinSU's Job Section</h1>
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5" href="/" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+            <img src="../../../public/img/icons/minsu.jpg" alt="MinSU's Job Section Logo" class="logo-img" style="max-height: 40px; max-width: 100%; margin-right: 10px;">
+            <h1 class="m-0 text-primary" style="font-size: 1.5rem; font-weight: bold;">MinSU's Job Section</h1>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto p-4 p-lg-0">
+                <li class="nav-item"><a href="/" class="nav-link ">Home</a></li>
+                <li class="nav-item"><a href="jobDetails" class="nav-link">Job Detail</a></li>
+                <li class="nav-item"><a href="category" class="nav-link">Job Category</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="about" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="menuDropdown">
+                        <li><a class="dropdown-item" href="testimonial">Testimonial</a></li>
+                        <li><a class="dropdown-item" href="contact">Contact</a></li>
+                       
+                    </ul>
+                </li>
+                <a href="/personal" style="background-color: lightgreen; border: none; color: white; padding: 10px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">
+  Profile
 </a>
 
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="/" class="nav-item nav-link ">Home</a>
-                    <a href="about" class="nav-item nav-link active">About</a>
-                    <a href="jobDetails" class="nav-item nav-link">Job Detail</a>
-                    <a href="category" class="nav-item nav-link">Job Category</a>
-                    <a href="contact" class="nav-item nav-link">Contact</a>
-                    <a href="testimonial" class="nav-item nav-link">Testimonial</a>
-                </div>
-            </div>
-        </nav>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
         <!-- Navbar End -->
-    
-    
             <!-- Header End -->
             <div class="container-xxl py-5 bg-dark page-header mb-5">
                 <div class="container my-5 pt-5 pb-4">

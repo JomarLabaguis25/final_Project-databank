@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import HomeView from '../views/HomeView.vue'
 import landingpage from '../views/landingpage.vue'
+import page from '../views/page.vue'
 import loginform from '../views/form/loginform.vue'
 import registrationform from '../views/form/registrationform.vue'
 import updateform from '../views/form/updateform.vue'
@@ -10,6 +11,8 @@ import contact from '../views/info/contact.vue'
 import category from '../views/info/category.vue'
 import jobDetails from '../views/info/jobDetails.vue'
 import testimonial from '../views/info/testimonial.vue'
+import personal from '../views/info/personal.vue'
+import EditProfileForm from '../views/info/profile.vue'
 
 // jobCategory section
 import automotive from '../views/jobCategory/automotive.vue'
@@ -33,6 +36,18 @@ import index2 from '../views/admin/dashboard/index2.vue'
 import index3 from '../views/admin/dashboard/index3.vue'
 import index4 from '../views/admin/dashboard/index4.vue'
 
+import lead1 from '../views/admin/dashboard/org/lead1.vue'
+import baanaw1 from '../views/admin/dashboard/org/baanaw1.vue'
+import buklod1 from '../views/admin/dashboard/org/buklod1.vue'
+import eng1 from '../views/admin/dashboard/org/eng1.vue'
+import gad1 from '../views/admin/dashboard/org/gad1.vue'
+import legits1 from '../views/admin/dashboard/org/legits1.vue'
+import linguistic1 from '../views/admin/dashboard/org/linguistic1.vue'
+import samfil1 from '../views/admin/dashboard/org/samfil1.vue'
+import sikada1 from '../views/admin/dashboard/org/sikada1.vue'
+import teatro1 from '../views/admin/dashboard/org/teatro1.vue'
+import turista1 from '../views/admin/dashboard/org/turista1.vue'
+import veritas1 from '../views/admin/dashboard/org/veritas1.vue'
 // forms
 import adminLogin from '../views/admin/forms/adminLogin.vue'
 import adminRegister from '../views/admin/forms/adminRegister.vue'
@@ -41,13 +56,12 @@ import forgotPassword from '../views/admin/forms/forgotPassword.vue'
 import jobTable from '../views/admin/jobPlacement/jobTable.vue'
 import insert from '../views/admin/jobPlacement/insert.vue'
 import infoTable from '../views/admin/jobPlacement/infoTable.vue'
-import process from '../views/admin/jobPlacement/process.vue'
 import inquireTable from '../views/admin/jobPlacement/inquireTable.vue'
+import profileTable from '../views/admin/jobPlacement/profileTable.vue'
 
 import orgtable from '../views/admin/StudentOrg/orgtable.vue'
 import insertEvent from '../views/admin/StudentOrg/insertEvent.vue'
 import event_Calendar from '../views/admin/StudentOrg/event_Calendar.vue'
-import statistics from '../views/admin/StudentOrg/statistics.vue'
 // orgList
 import lead from '../views/admin/StudentOrg/orgList/lead.vue'
 import baanaw from '../views/admin/StudentOrg/orgList/baanaw.vue'
@@ -61,6 +75,7 @@ import sikada from '../views/admin/StudentOrg/orgList/sikada.vue'
 import teatro from '../views/admin/StudentOrg/orgList/teatro.vue'
 import turista from '../views/admin/StudentOrg/orgList/turista.vue'
 import veritas from '../views/admin/StudentOrg/orgList/veritas.vue'
+import USG from '../views/admin/StudentOrg/orgList/USG.vue'
 
 import accounts from '../views/admin/accounts.vue'
 import alumniAcc from '../views/admin/alumniAcc.vue'
@@ -82,6 +97,7 @@ import events from '../views/StudentOrgWebsite/events.vue'
 // scholarshipSection
 import payrollsTable from '../views/admin/scholarshipSection/payrollsTable.vue'
 import insertScholar from '../views/admin/scholarshipSection/insertScholar.vue'
+import addScholar from '../views/admin/scholarshipSection/addScholar.vue'
 import mainTable from '../views/admin/scholarshipSection/mainTable.vue'
 import stat from '../views/admin/scholarshipSection/stat.vue'
 
@@ -94,6 +110,11 @@ const routes = [
     path: '/landing',
     // name: 'home',
     component: landingpage
+  },
+  {
+    path: '/page',
+    // name: 'home',
+    component: page
   },
   {
     path: '/',
@@ -124,6 +145,17 @@ const routes = [
     path: '/testimonial',
     component: testimonial
   },
+  {
+    path: '/personal',
+    component: personal
+  },
+
+    {
+      path: '/profile/:id',
+      name: 'edit-form',
+      component: EditProfileForm,
+    },
+
 
   // jobsection category
   {
@@ -132,7 +164,7 @@ const routes = [
      name: automotive
   },
   {
-    path: '/businessjobcategory',
+    path: '/business/:jobCategory',
     component: business,
      name: business
   },
@@ -245,17 +277,13 @@ const routes = [
     component: event_Calendar
   },
   {
-    path: '/process',
-    component: process
-  },
-  {
     path: '/inquireTable',
     component: inquireTable
   },
   {
-  path: '/statistics',
-  component: statistics
-},
+    path: '/profileTable',
+    component: profileTable
+  },
 {
   path: '/infoSection',
   component: infoSection
@@ -305,6 +333,10 @@ const routes = [
 {
   path: '/insertScholar',
   component: insertScholar
+},
+{
+  path: '/addScholar',
+  component: addScholar
 },
 {
   path: '/mainTable',
@@ -373,6 +405,10 @@ const routes = [
   path: '/baanaw',
   component: baanaw
 },
+{
+  path: '/USG',
+  component: USG
+},
 
 // alumni'sform
 {
@@ -398,6 +434,55 @@ const routes = [
 {
   path: '/chairsAcc',
   component: chairsAcc
+},
+
+{
+  path: '/lead1',
+  component: lead1
+},
+{
+  path: '/eng1',
+  component: eng1
+},
+{
+  path: '/gad1',
+  component: gad1
+},
+{
+  path: '/linguistic1',
+  component: linguistic1
+},
+{
+  path: '/legits1',
+  component: legits1
+},
+{
+  path: '/samfil1',
+  component: samfil1
+},
+{
+  path: '/sikada1',
+  component: sikada1
+},
+{
+  path: '/teatro1',
+  component: teatro1
+},
+{
+  path: '/turista1',
+  component: turista1
+},
+{
+  path: '/veritas1',
+  component: veritas1
+},
+{
+  path: '/buklod1',
+  component: buklod1
+},
+{
+  path: '/baanaw1',
+  component: baanaw1
 },
   // {
   //   path: '/about',
